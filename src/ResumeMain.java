@@ -2,11 +2,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+
 public class ResumeMain {
 
-	public static void main(String[] args) {
+	public void add(){
 
 		resume natObj = new resume();
+		ResumeMainFinal tableObj = new ResumeMainFinal();
 
 		String email,  name, educ = null, toExit = "exit";
 
@@ -18,8 +20,9 @@ public class ResumeMain {
 		int countEduc = 0;
 		int countExp = 0;
 		int countSkill = 0;
-
 		Scanner input = new Scanner(System.in);
+		
+		
 		System.out.println("Enter the Name:   ");
 		name = input.nextLine();
 		System.out.println("Enter the email:   ");
@@ -105,9 +108,9 @@ public class ResumeMain {
 		input.close();
 
 
-
+		//tableObj.promptTable(name, email, eduAchieve, experiance, skill);
 		natObj.prompt(name, email, eduAchieve,experiance,skill);
 
-	}
+	}	
 
 }

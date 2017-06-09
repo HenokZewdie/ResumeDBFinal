@@ -17,7 +17,11 @@ public class resume{
 			//Statement stmt = con.createStatement();
 			String query = ("INSERT into `resumeFriday`.`Employee`(`name`, `email`,`eduAchieve`, `experiance`, skill) VALUES (?,?,?,?,? )");
 			//String national = ("INSERT into `Student`.`new_table`(`StudNational`) VALUES  (?)");
-
+			String skills = ("INSERT into `resumeFriday`.`skill`( Skills) VALUES (?)");
+			String StrEducation = ("INSERT into `resumeFriday`.`Education`( Education) VALUES (?)");
+			String Strexperiance = ("INSERT into `resumeFriday`.`Experiance`( Experiances) VALUES (?)");
+			
+			
 			//Convert Education Arraylist to String
 			String separator="";
 			 StringBuilder educString = new StringBuilder();
@@ -43,15 +47,26 @@ public class resume{
 			 }
 			 
 			 
-			PreparedStatement ps = con.prepareStatement(query);
-			//PreparedStatement psAL = con.prepareStatement(national);
-			ps.setString(1, name);	
-			ps.setString(2, email);
-			ps.setString(3, educString.toString());
-			ps.setString(4, expString.toString());
-			ps.setString(5, skillString.toString());
-			ps.executeUpdate();
-			
+			 PreparedStatement ps = con.prepareStatement(query);
+				ps.setString(1, name);	
+				ps.setString(2, email);
+				ps.setString(3, educString.toString());
+				ps.setString(4, expString.toString());
+				ps.setString(5, skillString.toString());
+				ps.executeUpdate();
+				PreparedStatement psSkill = con.prepareStatement(skills);
+				psSkill.setString(1, skillString.toString());
+				psSkill.executeUpdate();
+				PreparedStatement psEdu = con.prepareStatement(StrEducation);
+				psEdu.setString(1, educString.toString());
+				psEdu.executeUpdate();
+				PreparedStatement psExp = con.prepareStatement(Strexperiance);
+				psExp.setString(1, expString.toString());
+				psExp.executeUpdate();
+				
+				
+				
+				
 			  //psAL.executeUpdate(); 
 			  
 			System.out.println("The Data Inserted Successfully");
