@@ -1,0 +1,34 @@
+create database resumeFriday;
+use resumeFriday;
+
+CREATE TABLE `Education` (
+  `edu_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Education` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`edu_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+CREATE TABLE `Employee` (
+  `Emp_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `eduAchieve` varchar(5000) NOT NULL,
+  `experiance` varchar(5000) DEFAULT NULL,
+  `skill` varchar(5000) NOT NULL,
+  PRIMARY KEY (`Emp_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+CREATE TABLE `Experiance` (
+  `exp_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Experiances` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`exp_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+CREATE TABLE `skill` (
+  `skill_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Skills` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`skill_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+CREATE TABLE `Gen_table` (
+  `Gen_table_ID` int(11) NOT NULL,
+  `edu_ID` varchar(45) DEFAULT NULL,
+  `exp_ID` varchar(45) DEFAULT NULL,
+  `user_ID` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Gen_table_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
